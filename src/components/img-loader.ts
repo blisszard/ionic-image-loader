@@ -189,6 +189,9 @@ export class ImgLoaderComponent implements OnInit {
    */
   private setImage(imageUrl: string, stopLoading: boolean = true): void {
     this.isLoading = !stopLoading;
+    if (imageUrl == null) {
+      imageUrl = this._src;
+    }
 
     if (this._useImg) {
       // Using <img> tag
